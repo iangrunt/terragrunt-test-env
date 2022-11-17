@@ -43,7 +43,7 @@ cp _terragrunt_config_common_to_each_environment.hcl _envcommon/fake-module-for-
 
 We'll also want to call this common configuration file in each one of our environments.
 ```
-cp _terragrunt_config_common_to_each_environment.hcl {development,dogfood,kibble,loadtest,production,qa,sandbox,uat,staging}/{us-east-1,us-east-2,us-west-2}/fake-module-for-testing/terragrunt.hcl
+cp _terragrunt_config_to_copy_to_each_file {development,dogfood,kibble,loadtest,production,qa,sandbox,uat,staging}/{us-east-1,us-east-2,us-west-2}/fake-module-for-testing/terragrunt.hcl
 ```
 
 ### Cleanup?
