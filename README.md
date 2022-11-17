@@ -35,6 +35,17 @@ touch {development,dogfood,kibble,loadtest,production,qa,sandbox,uat,staging}/ac
 touch {development,dogfood,kibble,loadtest,production,qa,sandbox,uat,staging}/{us-east-1,us-east-2,us-west-2}/region.hcl
 ```
 
+### Add Terragrunt code to appropriate files
+We're gonna use this fake Terraform module https://github.com/iangrunt/terraform-null-input-output in all our environments. We'll need to reference it in our common configuration file.
+```
+cp _terragrunt_config_common_to_each_environment.hcl _envcommon/fake-module-for-testing/common-config.hcl
+```
+
+We'll also want to call this common configuration file in each one of our environments.
+```
+cp _terragrunt_config_common_to_each_environment.hcl {development,dogfood,kibble,loadtest,production,qa,sandbox,uat,staging}/{us-east-1,us-east-2,us-west-2}/fake-module-for-testing/terragrunt.hcl
+```
+
 ### Cleanup?
 ```
 rm -rf {development,dogfood,kibble,loadtest,production,qa,sandbox,staging,uat}
