@@ -16,7 +16,7 @@ We're going to stash all of the shared configuration for all our environments he
 mkdir -p _envcommon/fake-module-for-testing
 ```
 ```
-touch _envcommon/fake-module-for-testing/terragrunt.hcl
+touch _envcommon/fake-module-for-testing/common-config.hcl
 ```
 
 Let's create fake accounts and fake regions to play with our fake Terraform module that will be managed by Terragrunt.
